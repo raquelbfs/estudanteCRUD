@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EstudanteCRUD</name>
+    </assembly>
+    <members>
+        <member name="M:EstudanteCRUD.Controllers.AuthController.Auth(System.String,System.String)">
+            <summary>
+             Autentica um usuário e retorna um token JWT.
+            </summary>
+            <remarks>
+            Username (nome de usuário) : ubc. 
+            Password (senha) : 123
+            </remarks>
+            <param name="username">Nome de usuário</param>
+            <param name="password">Senha</param>
+            <returns></returns>
+            <response code="200">Usuário autenticado com sucesso.</response>
+            <response code="400">Erro de validação.</response>
+        </member>
+        <member name="M:EstudanteCRUD.Controllers.StudentsController.GetStudents">
+            <summary>
+             Retorna todos os estudantes (autenticado).
+            </summary>
+            <returns>Lista de estudantes</returns>
+            <response code="200">Sucesso</response>
+            <response code="401">Não autorizado</response>
+        </member>
+        <member name="M:EstudanteCRUD.Controllers.StudentsController.GetStudent(System.Int32)">
+            <summary>
+             Retorna um estudante específico (autenticado).
+            </summary>
+            <param name="id">Identificador de estudante</param>
+            <returns>Dados do estudante</returns>
+            <response code="200">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="404">Não encontrado</response>
+        </member>
+        <member name="M:EstudanteCRUD.Controllers.StudentsController.AddStudent(EstudanteCRUD.Models.AddStudentRequest)">
+            <summary>
+             Cria um novo estudante (autenticado).
+            </summary>
+            <remarks>
+            Nome: nome do estudante. Idade: idade do estudante. Serie: série do estudante. NotaMedia: nota média do estudante. Endereco: endereço do estudante. NomePai: nome do pai do estudante. NomeMae: nome da mãe do estudante. DataNascimento: data de nascimento do estudante.
+            </remarks>
+            <param name="addStudentRequest">Dados do estudante</param>
+            <returns>Objeto recém-criado</returns>
+            <response code="201">Sucesso</response>
+            <response code="401">Não autorizado</response>
+        </member>
+        <member name="M:EstudanteCRUD.Controllers.StudentsController.UpdateStudent(System.Int32,EstudanteCRUD.Models.UpdateStudentRequest)">
+            <summary>
+             Atualiza um estudante existente (autenticado).
+            </summary>
+            <remarks>
+            Nome: nome do estudante. Idade: idade do estudante. Serie: série do estudante. NotaMedia: nota média do estudante. Endereco: endereço do estudante. NomePai: nome do pai do estudante. NomeMae: nome da mãe do estudante. DataNascimento: data de nascimento do estudante.
+            </remarks>
+            <param name="id">Identificador de estudante</param>
+            <param name="updateStudentRequest">Dados do estudante</param>
+            <returns></returns>
+            <response code="204">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="404">Não encontrado</response>
+        </member>
+        <member name="M:EstudanteCRUD.Controllers.StudentsController.DeleteStudent(System.Int32)">
+            <summary>
+             Deleta um estudante (autenticado).
+            </summary>
+            <param name="id">Identificador de estudante</param>
+            <returns></returns>
+            <response code="204">Sucesso</response>
+            <response code="401">Não autorizado</response>
+            <response code="404">Não encontrado</response>
+        </member>
+    </members>
+</doc>
